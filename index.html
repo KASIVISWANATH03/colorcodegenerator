@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<body align = "center">
+    <div>
+<h1><mark>RGB COLOR CODE GENERATOR</mark></h1>
+<div  style = "border:2px black solid ; margin-top : 30px">
+    <br><br>
+<label>COLORCODE:</label>
+<span id = "box">rgb(0,0,0)</span>
+<br>
+<hr>
+<label>RED</label>
+<input type="range" value = "255" min = "0" max = "255" id = "red" oninput="myColour()">
+<br><hr>
+<label>GREEN</label>
+<input type="range" value = "255" min = "0" max = "255" id = "green" oninput="myColour()">
+<br><hr>
+<label>BLUE</label>
+<input type="range" value = "255" min = "0" max = "255"id = "blue" oninput="myColour()">
+<br><hr>
+
+</div>
+</div>
+
+<br><br><hr><br>
+<div>
+    <h1><mark>HEX COLOR CODE GENERATOR</mark></h1>
+    <div  style = "border:2px black solid ; margin-top : 30px">
+        <br><br>
+    <label>COLORCODE:</label>
+    <span id = "box1">#ffffff</span>
+    <br>
+    <hr>
+    <label>RED</label>
+    <input type="range" value = "255" min = "0" max = "255" id = "red1" oninput="hexColour()">
+    <br><hr>
+    <label>GREEN</label>
+    <input type="range" value = "255" min = "0" max = "255" id = "green1" oninput="hexColour()">
+    <br><hr>
+    <label>BLUE</label>
+    <input type="range" value = "255" min = "0" max = "255"id = "blue1" oninput="hexColour()">
+    <br><hr>
+    
+    </div>
+    </div>
+<script>
+function myColour(){
+var red = document.getElementById("red").value;
+var green = document.getElementById("green").value;
+var blue = document.getElementById("blue").value;
+
+
+document.body.style.backgroundColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+document.getElementById("box").innerHTML = 'rgb(' + red + ',' + green + ',' + blue + ')';
+}
+function hexColour(){
+var red = document.getElementById("red1").value;
+var green = document.getElementById("green1").value;
+var blue = document.getElementById("blue1").value;
+var color = Number(red).toString(16)+ Number(green).toString(16)+ Number(blue).toString(16)
+document.body.style.backgroundColor = '#'+String(color);
+document.getElementById("box1").innerHTML = '#'+String(color);
+}
+</script>
+</body>
+</html>
