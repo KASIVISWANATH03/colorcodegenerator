@@ -58,7 +58,22 @@ function hexColour(){
 var red = document.getElementById("red1").value;
 var green = document.getElementById("green1").value;
 var blue = document.getElementById("blue1").value;
-var color = Number(red).toString(16)+ Number(green).toString(16)+ Number(blue).toString(16)
+var redval =String(Number(red).toString(16));
+var greenval =   String(Number(green).toString(16));
+var blueval = String( Number(blue).toString(16));
+if(red<=16)
+{
+    redval = '0'+redval;
+}
+if(green<=16)
+{
+    greenval = '0'+greenval;
+}
+if(blue<=16)
+{
+    blueval = '0'+blueval;
+}
+var color = redval+greenval+blueval;
 document.body.style.backgroundColor = '#'+String(color);
 document.getElementById("box1").innerHTML = '#'+String(color);
 }
